@@ -3,3 +3,5 @@ Matlab/data/
 bagFiles/
 draft/
 logFiles/
+
+*.m~
