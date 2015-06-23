@@ -1,21 +1,16 @@
 \section{EXPERIMENTAL SETUP}
-
-Acquisitions were made from the third floor of the Adrien-Pouliot building of Laval University(Coordinates in decimal degree (DD) : 46.778853, -71.274383). The sensors were place on a wooden structure at approximately \SI{13.9}{\meter} from the ground at an angle of 30 degrees relative to the vertical.
-\begin{itemize}
-    \item Acquisition from the $11^{th}$ february to the $21^{th}$ march...
-    \item Direction: N\SI{50}{\degree}E
-    \item Means that in the building shadow from time to time
-    \item Acquisition used ROS nodes (pointcloud2 and laserscan) and timestamps
-\end{itemize}
-
-Figure~\ref{fig:setup} show the LiDARs mounted on the structure.
+Data acquisition was conducted at Pouliot Pavilion of Laval University beginning February 11 and ending March 21. The sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. A wooden structure held the LiDARs side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. \SI{0}{\degree} in the sensor reference frame) forming a \SI{30}{\degree} angle with respect to the building wall. Figure~\ref{fig:setup} present an overview of the setup. To avoid direct light exposure between sensors, corrugated plastic layers were placed between them. Note that we observed no interference between the sensor readings.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\linewidth]{./img/setup_diag.jpg}
-    \caption{The experimental set-up}
+    \includegraphics[width=0.95\linewidth]{./img/setup_diag.jpg}
+    \caption{The experimental setup}
     \label{fig:setup}
 \end{figure}
+
+Means that in the building shadow from time to time.
+
+Acquisition used ROS nodes (pointcloud2 and laserscan) and timestamps.
 
 Some notes to fill up the table:
 \begin{itemize}
@@ -23,7 +18,6 @@ Some notes to fill up the table:
         \begin{itemize}
             \item See page 8. Range vs reflectivity
             \item See page 7. It is around 20cm at 20m
-            \item Class 1, $\lambda=905 nm$
         \end{itemize}
     \item LMS151
         \begin{itemize}
