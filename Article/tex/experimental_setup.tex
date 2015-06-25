@@ -4,7 +4,7 @@ Data acquisition was conducted at Pouliot Pavilion of Laval University beginning
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.95\linewidth]{./img/setup_diag.png}
-    \caption{The experimental setup}
+    \caption{The experimental setup with a 2D representation of the geometry (bottom left panel) and a 3D axis representing the orientation of the sensors.}
     \label{fig:setup}
 \end{figure}
 
@@ -49,6 +49,4 @@ Table~\ref{tab:lidars} show differents informations about the LiDARs. Note that 
     \caption{LiDARs information}\label{tab:lidars}
 \end{table}
 
-Recording of data was made through the Hydro distribution of the Robot Operating System (ROS)~\cite{ROSWeb}, which provide standardized data type as well as time synchronisation. The sicktoolbox\_wrapper~\cite{LMS200Web}, lms1xx~\cite{LMS151Web} and urg\_node~\cite{HokuyoWeb} packages provided LaserScan~\cite{LaserScan} messages for the LMS200, LMS151 and UTM-30LX-EW respectively. The velodyne[todo ref] package produced the PointCloud2[todo ref] messages for the HDL-32E.
-
-Test for bibliography~\cite{Mader2014}
+Recording of data was made through the Hydro distribution of the Robot Operating System (ROS)~\cite{ROSWeb}, which provide standardized data type as well as time synchronisation. The sicktoolbox\_wrapper~\cite{LMS200Web}, lms1xx~\cite{LMS151Web} and urg\_node~\cite{HokuyoWeb} packages provided \textit{LaserScan messages}\footnote{The LaserScan message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/LaserScan.html} for the LMS200, LMS151 and UTM-30LX-EW respectively. The velodyne package~\cite{VelodyneWeb} produced the \textit{PointCloud2 messages}\footnote{The PointCloud2 message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/PointCloud2.html} for the HDL-32E.
