@@ -1,11 +1,8 @@
 \section{Data Acquisition}
 
 \subsection{Experimental Setup}
-This section order : Sensors used + description, configuration of the sensors, scene + ground + shadow with figure of pictures seen from rgb camera.
+The LiDARs used for the analysis are the SICK LMS200, the SICK LMS151, the Hokuyo UTM-30LX-EW and the Velodyne HDL-32E. A camera was also used to get visual information about the acquired range data. Table~\ref{tab:lidars} gives additional informations about the LiDARs. Note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
 
-
-
-Table~\ref{tab:lidars} show differents informations about the LiDARs. Note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
 \begin{table}[htbp]
     \centering
     \begin{tabularx}{\linewidth}{|X||c|c|}\hline
@@ -18,6 +15,8 @@ Table~\ref{tab:lidars} show differents informations about the LiDARs. Note that 
     \caption{LiDARs information}\label{tab:lidars}
 \end{table}
 
+% TODO Create figures: distance/remission and distance/spot_area
+
 The sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. A wooden structure held the LiDARs side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. \SI{0}{\degree} in the sensor reference frame) forming a \SI{30}{\degree} angle with respect to the building wall. In this configuration, a slight opening of the window allowed to keep the LiDARs inside while scanning outside. To avoid direct light exposure between sensors, corrugated plastic layers were placed between them. Note that we observed no interference between the sensor readings. Figure~\ref{fig:setup} present an overview of the setup.
 
 \begin{figure}[h]
@@ -27,14 +26,15 @@ The sensors were placed close to the inner wall of a window facing N\SI{50}{\deg
     \label{fig:setup}
 \end{figure}
 
+The orientation of the building relative to the sun cause a shadow on the ground where the... The ground was not completely flat and even.
+
 \subsection{Dataset Description}
 Describe the overall data (table that is in the google drive) in this section... Over a wide variety of temperature, cloudy not cloudy, different size of flakes windy...
 
 Data acquisition was conducted at Pouliot Pavilion of Laval University beginning February 11 and ending March 21.
 
+% TODO remove the useless info about packages and messages
 Recording of data was made through the Hydro distribution of the Robot Operating System (ROS)~\cite{ROSWeb}, which provide standardized data type as well as time synchronisation. The sicktoolbox\_wrapper~\cite{LMS200Web}, lms1xx~\cite{LMS151Web} and urg\_node~\cite{HokuyoWeb} packages provided \textit{LaserScan messages}\footnote{The LaserScan message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/LaserScan.html} for the LMS200, LMS151 and UTM-30LX-EW respectively. The velodyne package~\cite{VelodyneWeb} produced the \textit{PointCloud2 messages}\footnote{The PointCloud2 message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/PointCloud2.html} for the HDL-32E.
-
-The orientation of the building relative to the sun cause a shadow on the ground where the...
 
 \begin{figure}[h]
     \centering
