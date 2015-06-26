@@ -1,21 +1,23 @@
 \section{Data Acquisition}
 
 \subsection{Experimental Setup}
-The LiDARs used for the analysis are the SICK LMS200, the SICK LMS151, the Hokuyo UTM-30LX-EW and the Velodyne HDL-32E. A camera was also used to get visual information about the acquired range data. Table~\ref{tab:lidars} gives additional informations about the LiDARs. Note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
+The data acquisition was performed with four LiDARs, namely the SICK LMS200, the SICK LMS151, the Hokuyo UTM-30LX-EW and the Velodyne HDL-32E. A camera was also used to get visual information about the scene. Table~\ref{tab:lidars} gives additional informations about the LiDARs. Note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
+~\cite{VelodyneManual}
+~\cite{UTMDatasheet}
+~\cite{LMS151Datasheet}
+~\cite{LMS200Manual}
 
 \begin{table}[htbp]
     \centering
-    \begin{tabularx}{\linewidth}{|X||X|X|X|}\hline
-        %Sensor                                 & Maximum distance (remission) & Echoes     & Spot Shape \\ \hline%\hline
-        %Velodyne HDL-32E~\cite{VelodyneManual} & \siunitx{70}{meter}(max)     & 1          & Rectangle  \\ \hline
-        %Hokuyo UTM-30LX-EW~\cite{UTMDatasheet} & \siunitx{30}{meter}(max)     & 3          & Ellipse    \\ \hline
-        %SICK LMS151~\cite{LMS151Datasheet}     & \siunitx{50}{meter}(gt75)    & 1 (second) & Circle     \\ \hline
-        %SICK LMS200~\cite{LMS200Datasheet}     & \siunitx{28}{meter}(gt75)    & 1          & Circle     \\ \hline
+    \begin{tabularx}{\linewidth}{|X|X|X|X|X|}\hline
+        \textbf{Sensor}             & \textbf{Echoes}  & \textbf{Maximum Distance}\footnote{The maximum distance depends on several factors such as lighting conditions and target remission. SICK distances are given for target remission greater than 75\%.}  & \textbf{Spot Area (at 30 meters)} & \textbf{Spot Shape}  \\ \hline
+        SICK LMS200        & 1       & \SI{28}{\meter}   & \SI{165}{\centi\meter\squared}     & Circle     \\ \hline
+        SICK LMS151        & 2\footnote{Two echoes are evaluated by the sensor, but only one is returned}       & \SI{50}{\meter}   & \SI{22}{\centi\meter\squared}      & Circle     \\ \hline
+        Hokuyo UTM-30LX-EW & 3       & \SI{30}{\meter}   & \SI{196}{\centi\meter\squared}     & Ellipse    \\ \hline
+        Velodyne HDL-32E   & 1       & \SI{70}{\meter}   & \SI{51}{\centi\meter\squared}      & Rectangle  \\ \hline
     \end{tabularx}
     \caption{LiDARs information}\label{tab:lidars}
 \end{table}
-
-% TODO Create figures: distance/remission and distance/spot_area
 
 The sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. A wooden structure held the LiDARs side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. \SI{0}{\degree} in the sensor reference frame) forming a \SI{30}{\degree} angle with respect to the building wall. In this configuration, a slight opening of the window allowed to keep the LiDARs inside while scanning outside. To avoid direct light exposure between sensors, corrugated plastic layers were placed between them. Note that we observed no interference between the sensor readings. Figure~\ref{fig:setup} present an overview of the setup.
 
