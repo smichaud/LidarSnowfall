@@ -5,12 +5,12 @@ The LiDARs used for the analysis are the SICK LMS200, the SICK LMS151, the Hokuy
 
 \begin{table}[htbp]
     \centering
-    \begin{tabularx}{\linewidth}{|X||c|c|}\hline
-        Sensor              & Echoes     & Spot Shape \\ \hline%\hline
-        Velodyne HDL-32E    & 1          & Rectangle  \\ \hline
-        Hokuyo UTM-30LX-EW  & 3          & Ellipse    \\ \hline
-        SICK LMS151         & 1 (second) & Circle     \\ \hline
-        SICK LMS200         & 1          & Circle     \\ \hline
+    \begin{tabularx}{\linewidth}{|X||X|X|X|}\hline
+        %Sensor                                 & Maximum distance (remission) & Echoes     & Spot Shape \\ \hline%\hline
+        %Velodyne HDL-32E~\cite{VelodyneManual} & \siunitx{70}{meter}(max)     & 1          & Rectangle  \\ \hline
+        %Hokuyo UTM-30LX-EW~\cite{UTMDatasheet} & \siunitx{30}{meter}(max)     & 3          & Ellipse    \\ \hline
+        %SICK LMS151~\cite{LMS151Datasheet}     & \siunitx{50}{meter}(gt75)    & 1 (second) & Circle     \\ \hline
+        %SICK LMS200~\cite{LMS200Datasheet}     & \siunitx{28}{meter}(gt75)    & 1          & Circle     \\ \hline
     \end{tabularx}
     \caption{LiDARs information}\label{tab:lidars}
 \end{table}
@@ -31,7 +31,7 @@ The orientation of the building relative to the sun cause a shadow on the ground
 \subsection{Dataset Description}
 Describe the overall data (table that is in the google drive) in this section... Over a wide variety of temperature, cloudy not cloudy, different size of flakes windy...
 
-Data acquisition was conducted at Pouliot Pavilion of Laval University beginning February 11 and ending March 21.
+Data acquisition was conducted at Pouliot Pavilion of Laval University beginning February~11 and ending March~21.
 
 % TODO remove the useless info about packages and messages
 Recording of data was made through the Hydro distribution of the Robot Operating System (ROS)~\cite{ROSWeb}, which provide standardized data type as well as time synchronisation. The sicktoolbox\_wrapper~\cite{LMS200Web}, lms1xx~\cite{LMS151Web} and urg\_node~\cite{HokuyoWeb} packages provided \textit{LaserScan messages}\footnote{The LaserScan message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/LaserScan.html} for the LMS200, LMS151 and UTM-30LX-EW respectively. The velodyne package~\cite{VelodyneWeb} produced the \textit{PointCloud2 messages}\footnote{The PointCloud2 message definition is available at http://docs.ros.org/api/sensor\_msgs/html/msg/PointCloud2.html} for the HDL-32E.
