@@ -1,5 +1,29 @@
-\section{INTRODUCTION}
+%!TEX root = ../root.tex
+\section{Introduction}
 
-This template provides authors with most of the formatting specifications needed for preparing electronic versions of their papers. All standard paper components have been specified for three reasons: (1) ease of use when formatting individual papers, (2) automatic compliance to electronic requirements that facilitate the concurrent or later production of electronic products, and (3) conformity of style throughout a conference proceedings. Margins, column widths, line spacing, and type styles are built-in; examples of the type styles are provided throughout this document and are identified in italic type, within parentheses, following the example. Some components, such as multi-leveled equations, graphics, and tables are not prescribed, although the various table text styles are provided. The formatter will need to create these components, incorporating the applicable criteria that follow.
+The robustness of autonomous vehicles has increased prodigiously in the recent years. While long-range autonomous driving on the highway has been around for decades already~\cite{Pomerleau_1996_616}, advances in mapping, 3D data processing and computer vision have enabled cars to drive autonomously for thousands of miles in unconstrained, city environments~\todo{cite grand challenge, google, cmu, etc?}. While this surely is an impressive feat, one quickly notes that most of these miles have been logged in California weather, which provides optimal operating conditions for sensors such as LiDARs. In order for these systems to gain acceptance worldwide, it is critical that they must operate in more challenging weather conditions, such as rain, fog and snow. 
 
+As we strive to make autonomous vehicles more adaptable to varying weather conditions, it is important to understand how sensors will behave in such conditions. Of particular interest, snowy conditions may cause challenging situations for sensors such as LiDARs, because the laser beams emitted may impact the snowflakes themselves, thus providing returns that to not correspond to solid obstacles. While programmable lighting may help circumvent this problem~\todo{cite Srinivas}, current LiDARs may fail under such circumstances. 
+
+In this paper, our main contribution is to provide a thorough characterization of the behavior of four well-known LiDARs in snowy conditions. Through an extensive empirical study performed on a novel dataset captured under varying degrees of snowfall, we evaluate how much these LiDARs are sensitive---or not---to falling snow. We show that most of the sensors are indeed robust even to significant snowfall, and that they can safely be used ``out of the box'' in a variety of conditions. \todo{Revise this last sentence}
+
+
+\begin{figure}
+\todo{Left: road under nice and sunny conditions, right: road (same road?) under snow storm}
+\caption{Driving in bad weather. While autonomous vehicles have attained a great level of performance in nice weather (left), bad weather can cause significant challenges. In this paper, we characterize the behavior in snowy conditions for oft-used sensors in autonomous cars: LiDARs.}
+\label{fig:good-bad-weather}
+\end{figure}
+
+
+% autonomous vehicles more and more robust (cite efforts from Google/CMU/etc.)
+% thousands of miles accumulated
+% but in what weather? 
+
+% as we strive to make autonomous vehicles more adaptable to various weather conditions, it's important to understand how sensors behave in such conditions. 
+% of particular interest, snowy conditions may cause challenging situations for ... 
+% show example of particularly bad snow scenes
+% vision in bad weather (Srinivas) -- active lighting
+% characterization of _real_ sensors, in _real_ snowy conditions, ranging from ... to ... 
+
+% through a thorough analysis of this novel dataset, we show that most of the 3D sensors are indeed robust to significant snowfall (due to their own internal filtering algorithms), and that they're ok to work ``out of the box''. 
 
