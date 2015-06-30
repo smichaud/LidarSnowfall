@@ -3,7 +3,7 @@
 
 \subsection{Sensors}
 
-Data acquisition was performed with the following four LiDARs: the SICK LMS200, SICK LMS151, Hokuyo UTM-30LX-EW, and the Velodyne HDL-32E. Relevant sensor information is provided in table~\ref{tab:lidars}, but the reader is referred to the manufacturers' documentation for additional information\footnote{Available here: Velodyne~\cite{VelodyneManual}, Hokuyo~\cite{UTMDatasheet}, LMS151~\cite{LMS151Datasheet}, LMS200~\cite{LMS200Manual}}. 
+Data acquisition was performed with the following four LiDARs: the SICK LMS200, SICK LMS151, Hokuyo UTM-30LX-EW, and the Velodyne HDL-32E. Relevant sensor information is provided in table~\ref{tab:lidars}, but the reader is referred to the manufacturers' documentation for additional information\footnote{Available here: Velodyne~\cite{VelodyneManual}, Hokuyo~\cite{UTMDatasheet}, LMS151~\cite{LMS151Datasheet}, LMS200~\cite{LMS200Manual}}.
 
 The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}. This wavelength part of the solar spectrum, which means that outdoor lighting conditions could potentially cause interference.
 
@@ -11,17 +11,12 @@ The first element that gives a qualitative overview of the sensor performance is
     \centering
     % \def\tabularxcolumn#1{m{#1}}
     \begin{tabular}{|c|c|c|c|c|}
-    \hline
-        \textbf{Sensor}     & \textbf{Maximum Distance}  & \textbf{Spot Area (at 30 meters)}  & \textbf{Spot Shape} & \textbf{Echoes} \\ 
         \hline
-        SICK LMS200         & \SI{28}{\meter}            & \SI{165}{\centi\meter\squared}     & Circle              & 1               \\ 
-        \hline
-        SICK LMS151         & \SI{50}{\meter}            & \SI{22}{\centi\meter\squared}      & Circle              & 2               \\ 
-        \hline
-        Hokuyo UTM-30LX-EW  & \SI{30}{\meter}            & \SI{196}{\centi\meter\squared}     & Ellipse             & 3               \\ 
-        \hline
-        Velodyne HDL-32E    & \SI{70}{\meter}            & \SI{51}{\centi\meter\squared}      & Rectangle           & 1               \\ 
-        \hline
+        \textbf{Sensor}     & \textbf{Maximum distance}  & \textbf{Spot area (at 30 meters)}  & \textbf{Spot shape} & \textbf{Echoes} \\\hline
+        SICK LMS200         & \SI{28}{\meter}            & \SI{165}{\centi\meter\squared}     & Circle              & 1               \\\hline
+        SICK LMS151         & \SI{50}{\meter}            & \SI{22}{\centi\meter\squared}      & Circle              & 2               \\\hline
+        Hokuyo UTM-30LX-EW  & \SI{30}{\meter}            & \SI{196}{\centi\meter\squared}     & Ellipse             & 3               \\\hline
+        Velodyne HDL-32E    & \SI{70}{\meter}            & \SI{51}{\centi\meter\squared}      & Rectangle           & 1               \\\hline
     \end{tabular}
     \caption{Overview of characteristics specific to each LiDAR.}
     \label{tab:lidars}
@@ -29,14 +24,14 @@ The first element that gives a qualitative overview of the sensor performance is
 
 \subsection{Setup configuration}
 
-Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. 
+Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them.
 
-Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors. In particular, the second row of fig.~\ref{fig:view} shows how the building casts a shadow that progressively covers the scene over the course of the day. This will allow us to explore the influence of lighting, as well as snow in sec.~\ref{sec:data-analysis}. 
+Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors. In particular, the second row of fig.~\ref{fig:view} shows how the building casts a shadow that progressively covers the scene over the course of the day. This will allow us to explore the influence of lighting, as well as snow in sec.~\ref{sec:data-analysis}.
 
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.95\linewidth]{./img/setup_diag.png}
-    \caption{The experimental setup. The 3D axis represent the orientation of the sensors and the bottom left panel represent the 2D geometry as seen from the right side of the picture. \todo{Replace with ``RGB camera (hidden)'' in figure}}
+    \caption{The experimental setup. The 3D axis represent the orientation of the sensors and the bottom left panel represent the 2D geometry as seen from the right side of the picture.}
     \label{fig:setup}
 \end{figure}
 
@@ -49,13 +44,31 @@ Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with th
 \end{figure}
 
 \subsection{Dataset description} % TODO change number of acquisitions and overall time if required (and check abstract also)
-Data acquisition started February~11 and ended on March~21. A total of 14 samples were obtained for a total of more than 78 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate, sky type and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data. \todo{Do we freely provide it? If so, point to website here.}
+Data acquisition started February~11 and ended on March~21. A total of 14 samples were obtained for a total of more than 78 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate, sky type and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data. The dataset will be publicly available upon paper acceptance.
 
-\begin{table}
-\todo{Add table with statistics on our data (days, snowflakes size, sky type, wind speed, etc.)}
-\caption{Overview of our snow dataset. }
-\label{tab:overview-dataset}
-\end{table}
-
-
+\begin{table*}[htbp]
+    \centering
+    \todo{Make sure this table fulfill Philippe's requirements...}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Beginning} & \textbf{Duration} & \textbf{Sky}  & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind}  & \textbf{Daily precipitation} \\
+        \textbf{time}      & \textbf{(HH:MM)}  & \textbf{type} & \textbf{size}       & \textbf{rate}    & \textbf{speed} & \textbf{(cm)}                \\\hline
+        Feb 11, 8:46 am    &  00:06            & Night         & Small               & Low/medium       &                &                              \\\hline
+        Feb 12, 9:47 am    &  09:21            & Cloudy        & Small               & Variable         &                &                              \\\hline
+        Feb 14, 10:12 pm   &  04:12            & Night         & Small               & Very low         &                &                              \\\hline
+        Feb 16, 12:27 pm   &  07:17            & Clear         & None                & None             &                &                              \\\hline
+        Feb 17, 12:02 pm   &  24:36            & Cloudy        & None                & None             &                &                              \\\hline
+        Feb 19, 8:38 am    &  10:02            & Cloudy        & Big/small           & High             &                &                              \\\hline
+        Mar 2, 1:06 pm     &  01:27            & Cloudy        & Big/small           & Variable         &                &                              \\\hline
+        Mar 3, 10:33 pm    &  02:17            & Night         & Big                 & ?                &                &                              \\\hline
+        Mar 4, 11:45 am    &  04:12            & Cloudy        & Big/medium          & Low/none         &                &                              \\\hline
+        Mar 17, 10:08 am   &  06:08            & Cloudy        & ?                   & ?                &                &                              \\\hline
+        Mar 21, 6:44 pm    &  07:42            & Night         & Medium/big          & High             &                &                              \\\hline
+        Mar 30, 1:06 pm    &  04:45            & Cloudy        & Medium/big          & High             &                &                              \\\hline
+        Apr 2, 1:56 pm     &  01:51            & Cloudy        & Small               & High             &                &                              \\\hline
+        Apr 21, 10:52 am   &  01:39            & Cloudy        & Rain                & Medium           &                &                              \\\hline
+    \end{tabular}
+    \caption{Overview of our snow dataset.}
+    \label{tab:overview-dataset}
+\end{table*}
 
