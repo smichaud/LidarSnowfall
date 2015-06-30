@@ -7,17 +7,25 @@ Data acquisition was performed with the following four LiDARs: the SICK LMS200, 
 
 The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}. This wavelength part of the solar spectrum, which means that outdoor lighting conditions could potentially cause interference.
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
     \centering
-    \begin{tabularx}{\linewidth}{|X|X|X|X|X|}\hline
-        \textbf{Sensor}     & \textbf{Maximum Distance}  & \textbf{Spot Area (at 30 meters)}  & \textbf{Spot Shape} & \textbf{Echoes} \\ \hline
-        SICK LMS200         & \SI{28}{\meter}            & \SI{165}{\centi\meter\squared}     & Circle              & 1               \\ \hline
-        SICK LMS151         & \SI{50}{\meter}            & \SI{22}{\centi\meter\squared}      & Circle              & 2               \\ \hline
-        Hokuyo UTM-30LX-EW  & \SI{30}{\meter}            & \SI{196}{\centi\meter\squared}     & Ellipse             & 3               \\ \hline
-        Velodyne HDL-32E    & \SI{70}{\meter}            & \SI{51}{\centi\meter\squared}      & Rectangle           & 1               \\ \hline
-    \end{tabularx}
-    \caption{Overview of characteristics specific to each LiDAR.}\label{tab:lidars}
-\end{table}
+    % \def\tabularxcolumn#1{m{#1}}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        \textbf{Sensor}     & \textbf{Maximum Distance}  & \textbf{Spot Area (at 30 meters)}  & \textbf{Spot Shape} & \textbf{Echoes} \\ 
+        \hline
+        SICK LMS200         & \SI{28}{\meter}            & \SI{165}{\centi\meter\squared}     & Circle              & 1               \\ 
+        \hline
+        SICK LMS151         & \SI{50}{\meter}            & \SI{22}{\centi\meter\squared}      & Circle              & 2               \\ 
+        \hline
+        Hokuyo UTM-30LX-EW  & \SI{30}{\meter}            & \SI{196}{\centi\meter\squared}     & Ellipse             & 3               \\ 
+        \hline
+        Velodyne HDL-32E    & \SI{70}{\meter}            & \SI{51}{\centi\meter\squared}      & Rectangle           & 1               \\ 
+        \hline
+    \end{tabular}
+    \caption{Overview of characteristics specific to each LiDAR.}
+    \label{tab:lidars}
+\end{table*}
 
 \subsection{Setup configuration}
 
