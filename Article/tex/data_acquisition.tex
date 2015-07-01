@@ -48,25 +48,28 @@ Data acquisition started February~11 and ended on March~21. A total of 14 sample
 
 \begin{table*}[htbp]
     \centering
-    \todo{Confirm that this table is ok (delete unwanted information and correct errors)}
+    \todo{Confirm that this table is ok (delete unwanted information and correct errors)}\\
+    \todo{Why do we have ``night'' as a sky type?}\\
+    \todo{Should we exclude the first day as it only has 6 minutes?}
+    \todo{Shoudl we exclude the days with no snow?}
     \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Beginning} & \textbf{Duration} & \textbf{Sky}  & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind speed range}      & \textbf{Daily precipitation} & \textbf{Temperature}     \\
-        \textbf{time}      & \textbf{(HH:MM)}  & \textbf{type} & \textbf{size}       & \textbf{rate}    & \textbf{(\SI{}{\km\per\hour})} &                              & \textbf{(\SI{}{\celsius})}      \\\hline
-        Feb 11, 8:46 am    &  00:06            & Night         & Small               & Low/medium       & [16-18]                        & \SI{1}{\cm}                  & -17.4 \\\hline
-        Feb 12, 9:47 am    &  09:21            & Cloudy        & Small               & Variable         & [2-13]                         & \SI{1.4}{\cm}                & -14.1 \\\hline
-        Feb 14, 10:12 pm   &  04:12            & Night         & Small               & Very low         & [5-13]                         & \SI{0.2}{\cm}                & -21.4 \\\hline
-        Feb 16, 12:27 pm   &  07:17            & Clear         & None                & None             & [14-29]                        & \SI{0}{\cm}                  & -15.5 \\\hline
-        Feb 17, 12:02 pm   &  24:36            & Cloudy        & None                & None             & [1-9]                          & \SI{0}{\cm}                  & -20.2 \\\hline
-        Feb 19, 8:38 am    &  10:02            & Cloudy        & Big/small           & High             & [3-28]                         & \SI{4.5}{\cm}                & -10.9 \\\hline
-        Mar 2, 1:06 pm     &  01:27            & Cloudy        & Big/small           & Variable         & [22-36]                        & \SI{1.6}{\cm}                & -9.1  \\\hline
-        Mar 3, 10:33 pm    &  02:17            & Night         & Big                 & Medium           & [7-9]                          & \SI{5.4}{\cm}                & -13.3 \\\hline
-        Mar 4, 11:45 am    &  04:12            & Cloudy        & Big/medium          & Low/none         & [20-30]                        & \SI{2.0}{\cm}                & -4.3  \\\hline
-        Mar 17, 10:08 am   &  06:08            & Cloudy        & Big/medium          & Low/none         & [1-31]                         & \SI{2.0}{\cm}                & -5.8  \\\hline
-        Mar 21, 6:44 pm    &  07:42            & Night         & Medium/big          & High             & [5-33]                         & \SI{8.6}{\cm}                & -5.1  \\\hline
-        Mar 30, 1:06 pm    &  04:45            & Cloudy        & Medium/big          & High             & [4-8]                          & \SI{8.5}{\cm}                & -3.0  \\\hline
-        Apr 2, 1:56 pm     &  01:51            & Cloudy        & Small/rain          & High             & [2-10]                         & \SI{1.2}{\cm}/\SI{5.4}{\mm}  & -8.4  \\\hline
-        Apr 21, 10:52 am   &  01:39            & Cloudy        & Rain                & Medium           & [16-18]                        & \SI{15}{\mm}                 & 14.6  \\\hline
+        \textbf{Beginning} & \textbf{Duration} & \textbf{Sky}  & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind speed range}      & \textbf{Daily precipitation}  & \textbf{Temperature}     \\
+        \textbf{time}      & \textbf{(HH:MM)}  & \textbf{type} & \textbf{size}       & \textbf{rate}    & \textbf{(\SI{}{\km\per\hour})} & snow/\textit{rain}            & \textbf{(\SI{}{\celsius})}      \\\hline
+        Feb 11, 8:46 am    &  00:06            & Night         & Small               & Low/medium       & [16-18]                        & \SI{1}{\cm}                   & -17.4 \\\hline
+        Feb 12, 9:47 am    &  09:21            & Cloudy        & Small               & Variable         & [2-13]                         & \SI{1.4}{\cm}                 & -14.1 \\\hline
+        Feb 14, 10:12 pm   &  04:12            & Night         & Small               & Very low         & [5-13]                         & \SI{0.2}{\cm}                 & -21.4 \\\hline
+        Feb 16, 12:27 pm   &  07:17            & Clear         & None                & None             & [14-29]                        & \SI{0}{\cm}                   & -15.5 \\\hline
+        Feb 17, 12:02 pm   &  24:36            & Cloudy        & None                & None             & [1-9]                          & \SI{0}{\cm}                   & -20.2 \\\hline
+        Feb 19, 8:38 am    &  10:02            & Cloudy        & Big/small           & High             & [3-28]                         & \SI{4.5}{\cm}                 & -10.9 \\\hline
+        Mar 2, 1:06 pm     &  01:27            & Cloudy        & Big/small           & Variable         & [22-36]                        & \SI{1.6}{\cm}                 & -9.1  \\\hline
+        Mar 3, 10:33 pm    &  02:17            & Night         & Big                 & Medium           & [7-9]                          & \SI{5.4}{\cm}                 & -13.3 \\\hline
+        Mar 4, 11:45 am    &  04:12            & Cloudy        & Big/medium          & Low/none         & [20-30]                        & \SI{2.0}{\cm}                 & -4.3  \\\hline
+        Mar 17, 10:08 am   &  06:08            & Cloudy        & Big/medium          & Low/none         & [1-31]                         & \SI{2.0}{\cm}                 & -5.8  \\\hline
+        Mar 21, 6:44 pm    &  07:42            & Night         & Medium/big          & High             & [5-33]                         & \SI{8.6}{\cm}                 & -5.1  \\\hline
+        Mar 30, 1:06 pm    &  04:45            & Cloudy        & Medium/big          & High             & [4-8]                          & \SI{8.5}{\cm}                 & -3.0  \\\hline
+        Apr 2, 1:56 pm     &  01:51            & Cloudy        & Small/rain          & High             & [2-10]                         & \SI{1.2}{\cm}/\textit{5.4 mm} & -8.4  \\\hline
+        Apr 21, 10:52 am   &  01:39            & Cloudy        & Rain                & Medium           & [16-18]                        & \textit{15 mm}                & 14.6  \\\hline
     \end{tabular}
     \caption{Overview of our snow dataset.}
     \label{tab:overview-dataset}
