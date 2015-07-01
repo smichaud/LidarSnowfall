@@ -28,14 +28,22 @@ Fig.~\ref{fig:TimingSnow}, shows this fraction compared to all measurements as a
 
 Our first conclusion based on these graphs is that some sensors are more sensitive than others. The most sensitive device was the older LMS200, first introduced in the mid-2000. Its technical description~\cite{LMS200Manual} indicates that ``Raindrops and snow-flakes are cut out using pixel-oriented evaluation''. However, no further details are given for the algorithm. For the most intense snowstroms (Fig~\ref{fig:TimingSnow}. b) 02-19, d) 03-17, e) 03-21 and f) 03-30), it peaked at around 15\%, for averaging windows of \SI{106}{\second}. A snapshot of four consecutive scans overlaid in the same plot can be seen in Fig.~\ref{fig:LMS200_4Scans_Feb19}, corresponding to one of those intense episode.
 
-or by design for the multi-echo Hokuyo. Indeed, 
+or by design for the multi-echo Hokuyo. Indeed, Fig.~\ref{fig:Hokuyo_4Scans_Feb19}.
 
 \begin{figure}[th]
     \centering
     \includegraphics[width=0.95\linewidth]{./img/LMS200_4Scans_Feb19.png}
-    \caption{Four overlaid consecutive scans for the LMS200 sensor, taken in the 02-19 dataset. Each symbol correspond to a particular scan. The curved line at the top correspond to the snow surface on the ground. One can see the rapid variation of the snowflake echoes between scans, and how they are mostly limited to a range $x<$\SI{5}{\meter} .}
+    \caption{Four overlaid consecutive scans for the LMS200 sensor, taken from the 02-19 dataset. Each symbol correspond to a particular scan. The curved line at the top corresponds to the snow surface on the ground. One can see the rapid variation of the snowflake echoes between scans, and how they are mostly limited to a range $x<$\SI{5}{\meter}. The percentage (in brackets) are the proportion of those echoes in the snowflakes.}
     \label{fig:LMS200_4Scans_Feb19}
 \end{figure}
+
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=0.93\linewidth]{./img/Hokuyo_4Scans_Feb19.png}
+    \caption{Four overlaid consecutive $1^{st}$ echo scans for the Hokuyo sensor, taken from the 02-19 dataset. Each symbol correspond to a particular scan. The curved line at the top corresponds to the snow surface on the ground. The percentage (in brackets) are the proportion of echoes in the snowflakes.}
+    \label{fig:Hokuyo_4Scans_Feb19}
+\end{figure}
+
 
 
 A significant side benefit of those more sensitive sensors is that hey are able to record the timeline of a snow storm at a temporally fine-grained. This is something that is not possible with traditional snow measuring equipment, which can only report accumulation over long period of times. Indeed, for b) we see a pretty steady snowfall from t=1 to t=4 hours, with a peak around t=1.25 hours. This could be helpful in modeling a snowstorm in a simulator. 
