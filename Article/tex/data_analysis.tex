@@ -42,36 +42,35 @@ Our first conclusion based on Fig.~\ref{fig:TimingSnow} is that some sensors are
 \begin{figure*}[th]
     \centering
     \includegraphics[width=0.98\linewidth]{./img/TimingSnow.png}
-    \caption{Temporal evolution of the percentage of echoes coming from the falling snow (range $x<$\SI{5}{\meter}) during the 6 most intense episodes, for all 4 sensors. The data is smoothed by taking statistics for small time windows. Except for the LMS-200 and Hokuyo $1^{st}$ echo, all other sensors statistics have been scaled up (factor in bracket of legend b) for ease of visual comparison.}
+    \caption{Temporal evolution of the percentage of echoes coming from the falling snow (range $x<$\SI{5}{\meter}) during the 6 most intense episodes, for all 4 sensors. The data is smoothed by taking statistics for small time windows. Except for the LMS-200 and Hokuyo $1^{st}$ echo, all other sensors statistics have been scaled up (factor in bracket of legend b) for ease of visual comparison. Time is in hour, starting from the beginning of the data capture sequence.}
     \label{fig:TimingSnow}
 \end{figure*}
 
 
 \subsubsection{Hokuyo UTM-30LX-EW}
-For the Hokuyo sensor, we resorted to a slightly different approach for comparison, as the device has been designed to return multiple echoes. We thus extracted statistics for two cases: for first and last echo. Statistics for the first echo tells us how sensitive the device is, if one which to detect the presence or absence of falling snow. This information could be used, in turn, to adapt the driving or inform vision algorithms of the presence of particles in the air. Using the last echo ensures that we are able to detect large obstacles such as other vehicle or the snow-covered ground, and used in localization and navigation purposes. In case of the first echo, the device should behave like the LMS-200, and in the second case like the LMS-151 (recall that it was programmed to return the second echo). When looking at Fig.~\ref{fig:TimingSnow}, this is more-or-less the behavior that we see. The Hokuyo's $1^{st}$ echo (blue line) closely track the LMS-200 curves (red dashed line) almost everywhere, with a few exceptions for which we do not have an explanation. The last echo of the Hokuyo tends to reject the falling snow, but not as well as the LMS-151, as it peaked at around 0.5 \% in some episodes. Nevertheless, this difference might not be sufficient to impact algorithms relying on laser data.
-
-Note that however there was instance (daytime with sun) where the sensor didn't return echoes at all. We suspect that this is sue to the fact that the power level used. More on this in a following subsection.
-
+For the Hokuyo sensor, we resorted to a slightly different approach for comparison, as the device has been designed to return multiple echoes. We thus extracted statistics for two cases: for first and last echo. Statistics for the first echo tells us how sensitive the device is, if one which to detect the presence or absence of falling snow. This information could be used, in turn, to adapt the driving or inform vision algorithms of the presence of particles in the air. Using the last echo ensures that we are able to detect large obstacles such as other vehicle or the snow-covered ground, and used in localization and navigation purposes. In case of the first echo, the device should behave like the LMS-200, and in the second case like the LMS-151 (recall that it was programmed to return the second echo). When looking at Fig.~\ref{fig:TimingSnow}, this is more-or-less the behavior that we see. The Hokuyo's $1^{st}$ echo (blue line) closely track the LMS-200 curves (red dashed line) almost everywhere, with a few exceptions for which we do not have an explanation. The last echo of the Hokuyo tends to reject the falling snow, but not as well as the LMS-151, as it peaked at around 0.5 \% in some episodes. Tab.~\ref{tab:avgRates} shows a similar correlation, but for averages taken over the complete 02-19 dataset. Nevertheless, this difference might not be sufficient to impact algorithms relying on laser data.
 
 \subsubsection{Velodyne HDL-32E}
+For all purposes, the behavior of the Velodyne was similar to the LMS-151, but with a slightly higher sensitivity to snowflakes. On average, it was approximately 10 times more sensitive than the SICK LMS-151. Considering that the overall average rate of snowflake echoes is still very small (0.01 \%), this should not necessarily be impacting too much its performance in falling snow.
 
 \subsubsection{Use of sensitive devices as snowstorm characterization tools}
-A significant side benefit of those more sensitive sensors is that hey are able to record the temporal evolution of a snowstorm at a fine-grained level. This is something that is not possible with traditional snow measuring equipment, which can only report accumulation over long period of times. Indeed, for b) we see a pretty steady snowfall from t=1 to t=4 hours, with a peak around t=1.25 hours. This could be helpful in modeling a snowstorm in a simulator.
+A significant side benefit of the more sensitive sensors (LMS-200, Hokuyo UTM-30LX-EW) is that they are capable of recording the temporal evolution of a snowstorm, at a fine-grained level. This is something that is not possible with traditional snow measuring equipment, which can only report accumulation over long period of times. Indeed, for b) we see a pretty steady snowfall from t=1 to t=4 hours, with a peak around t=1.25 hours. This could be helpful in developing temporal models of snowstorms, to be used in a vehicle simulator for example or simply in meteorological studies.
 
 % ========================= Histograms ===================
-\subsection{Distribution of Echos in Falling Snowflakes, as a function of distance}
+\subsection{Distribution of echoes in snowflakes, as a function of range $x$}
 \label{subsub:Histo}
 
-Fig. \ref{fig:Histograms} shows the histogram distribution of the snowflake echoes, as a function of distance. In some ways, they give us an approximate probability density function of these echoes that could be used to model such sensors. To allow for ease of comparison, these histograms have all been normalized by their total area. The numbers in brackets in the legend indicate the fraction of echoes in the snowflakes, compared to the total number of data points. The general shape (for the most part) of these histograms is close to a log-normal distribution, with the exception of the LMS200 for a number of dates (02-12 through 03-17), which seems to follow a sum of log-normal distributions. This indicate that a simple probabilistic model can be derived for these sensors.
+When modeling a range sensor, one has to have an idea of the probability distribution of certain events (e.g. snowflakes) as a function of the distance to the sensor. Over the years, many researchers have proposed probabilistic models for sensors, notably in Thrun \emph{et al.}~\cite{Thrun:2005:PR:1121596}. In the previous section, we have in some sense estimated the probability for a given sensor S that a snowflake would generate an echo $E_{snowflake}$ given the weather condition $W$, or $P_S(E_{snowflake}|W)$. In this section, we take a closer look at which range $x$ such events would be generated, $P_S(E_{snowflake}|x,W)$. Having such a formulation would allow for a more statistically-sound treatment of the information, such as withing the Bayesian probabilistic framework. To this effect, we use histograms as approximation to the previous distribution. In Fig.~\ref{}, we have plotted these histograms for each of the four sensors. For ease of comparison, these histograms have all been normalized by their total area, as the total count varies widely between the sensors. The numbers in brackets in the legend indicate the fraction of echoes in the snowflakes compared to the total number of data points, for a particular dataset.
+
 %, such as
 %\begin{equation}
 %p(e|x,w)=p(e|w)p(e|x)
 %\end{equation}
 %where p(e|x) would be the log-normal distribution and p(e|w) the probability of having snow affecting
 
-These histograms can be broken down into two main regions of interest. The first half (located from the left hand side of the peak) shows an exponential increase in snowflake echoes as a function of the distance x. We attribute this phenomenon to the shielding effect of the building from the falling snow. This phenomenon would be more or less absent on an autonomous vehicle, and thus we do not consider it much in our analysis. At the peak, this shielding effect effectively vanishes. The right hand side of the peak shows a gaussian-type exponential decrease of the probability of echos in falling snow. This could be explained by the greatly reduced light intensity (1/$x^2$) of the return, coupled with the decreased light flux/intensity if one assume constant beam size on the way out. This is great news, 
+The general shape of these histograms is close to a log-normal distribution, with the exception of the LMS-200 for a number of dates (02-12 through 03-17), which seems to follow a sum of two log-normal distributions. This indicate that a simple probabilistic model $P_S(E_{snowflake}|x,W)$ can be derived for these sensors. We break down these distributions into two main regions of interest. The first half (located on the left hand side of the peak) shows an increase in snowflake echoes as a function of the distance $x$. We attribute this phenomenon to the shielding effect of the building from the falling snow. This phenomenon might be absent, to some extent, on an autonomous vehicle. For this reason, we prefer not to discuss it too much in our analysis, as it might not be applicable. The right hand side of the peak shows a gaussian-type exponential decrease of the probability of echos in falling snow. This could be explained by the greatly reduced light intensity (1/$x^2$) of the return, coupled with the decreased light flux/intensity if one assume constant beam size on the way out. This is great news, 
 
-For the LMS151, the amound of data is not sufficient to draw much conclusion on this distribution except for the fact that there was virtually no events passed 4.
+For the LMS-151, the amount of data was not sufficient to draw much conclusion on this distribution except for the fact that there was virtually no events passed 4.
 
 
 \begin{figure}[th]
@@ -85,10 +84,11 @@ Results show that laser might need to be mounted farther away from the front of 
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \textbf{LMS-200}       & \textbf{Hokyo first echo}  & \textbf{LMS-151}  & \textbf{Velodyne HDL-32E}  \\\hline
-                 2.67\%            &           3.55\%                 &       0.00178\%     &  0.0100\%  \\\hline
+        \textbf{LMS-200}       & \textbf{Hokuyo}             & \textbf{Hokuyo}    & \textbf{LMS-151}  & \textbf{Velodyne}  \\
+                                        & \textbf{$1^{st}$ echo}   & \textbf{last echo}  &                            & \textbf{HDL-32E}  \\\hline
+                 2.67\%            &           3.55\%                &                                      &       0.00178\%     &  0.0100\%  \\\hline
     \end{tabular}
     \caption{Average snowflakes echos for the 02-19 data set, per sensor.}
     \label{tab:avgRates}
@@ -97,4 +97,11 @@ Results show that laser might need to be mounted farther away from the front of 
 % ======================= Sunlight =====================
 \subsection{Impact of sunlight on Hokuyo}
 
+Note that however there was instance (daytime with sun) where the sensor didn't return echoes at all. We suspect that this is sue to the fact that the power level used. More on this in a following subsection.
+
+% ======================= Sunlight =====================
+\subsection{Discussion}
+It seems that the majority of the impact of falling snow is for the first 5-6 meters. For near distance, this would impact the collision/obstacle avoidance. However, the problem at long range does not seem to happen, at least based on extrapolating from our data set.
+
+Open question such as how the maximum range is affected by the snow.
 
