@@ -66,3 +66,22 @@ Data acquisition started February~12 and ended on March~2. A total of 10 samples
     \label{tab:overview-dataset}
 \end{table*}
 
+\subsection{Pre-selection of laser data}
+For each sensor, we selected a combination of angles and laser rings (for the Velodyne) or beams (for the others) that had a clear view of the snow-covered ground surface. The actual details for each sensor are given in tab.~\ref{tab:selectionScans}. The range of the ground in our scans was between $x = \SI{15}{\meter}$ to $x=\SI{22}{\meter}$, depending on the beam. To simplify the analysis, we considered as a snowflake echo any measurement which had a range reading of $x<\SI{14.5}{\meter}$. As will be shown later in sec.~\ref{sec:Histo}, this approximation is valid as the vast majority of those events happened for $x<\SI{10}{\meter}$. Thus, any snowflakes echoes between $x>\SI{14.5}{\meter}$ and the snow-covered ground surface were negligible, for all four sensors.
+
+\begin{table}[htbp]
+    \centering
+    % \def\tabularxcolumn#1{m{#1}}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Sensor}            & \textbf{Acquisition}  & \textbf{Selected}  & \textbf{Selected}  & \textbf{Window} \\
+        \textbf{ }                     & \textbf{frequency}  & \textbf{beams/angles}  & \textbf{rings}  & \textbf{size} \\\hline
+       LMS200               & \SI{9.375}{\Hz}                      & 55--115                                    & N/A                         & ~\SI{106}{\second}       \\\hline
+        LMS151               & \SI{25}{\Hz}                           & 310--220                                  & N/A                         & ~\SI{40}{\second}        \\\hline
+        Hokuyo               & \SI{20}{\Hz}                          & 440--590                                  & N/A                         & ~\SI{100}{\second}     \\\hline
+        Velodyne             & \SI{10}{\Hz}                          & -0.05--0.25 rad                     & 17--31                   & ~\SI{40}{\second}      \\\hline
+    \end{tabular}
+    \caption{Details for data used in analysis. The window size is the temporal window used to calculate statistics during the temporal evolution of a storm.}
+    \label{tab:selectionScans}
+\end{table}
+
