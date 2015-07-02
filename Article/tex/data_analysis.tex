@@ -23,9 +23,9 @@ To smooth out these very short-term fluctuations, statistics are extracted from 
 
  \begin{figure}[th]
     \centering
-    \includegraphics[width=0.95\linewidth]{./img/LMS200_4Scans_Feb19.png}
-    \includegraphics[width=0.95\linewidth]{./img/Hokuyo_4Scans_Feb19.png}
-    \caption{Four overlaid consecutive scans for the LMS200 sensor (top), and the first echo scans for the Hokuyo sensor (bottom), taken from the 02-19 dataset. Each symbol correspond to a particular scan. The curved line at the top corresponds to the snow surface on the ground. One can see the rapid variation of the snowflake echoes between scans, and how they are mostly limited to a range $x<\SI{5}{\meter}$. The percentage (in brackets) are the proportion of those echoes in the snowflakes. \todo{use PDF instead}}
+    \includegraphics[width=0.9\linewidth]{./img/LMS200_4Scans_Feb19.pdf}
+    \includegraphics[width=0.9\linewidth]{./img/Hokuyo_4Scans_Feb19.pdf}
+    \caption{Four overlaid consecutive scans for the LMS200 sensor (top), and the first echo scans for the Hokuyo sensor (bottom), taken from the 02-19 dataset. Each symbol correspond to a particular scan. The curved line at the top corresponds to the snow surface on the ground. One can see the rapid variation of the snowflake echoes between scans, and how they are mostly limited to a range $x<\SI{5}{\meter}$. The percentage (in brackets) are the proportion of those echoes in the snowflakes.}
     \label{fig:LMS200_4Scans_Feb19}
 \end{figure}
 
@@ -38,7 +38,7 @@ Our first conclusion based on fig.~\ref{fig:TimingSnow} is that the most sensiti
 
 \begin{figure*}[th]
     \centering
-    \includegraphics[width=0.98\linewidth]{./img/TimingSnow.png}
+    \includegraphics[width=0.98\linewidth]{./img/Timings.pdf}
     \caption{Temporal evolution of the percentage of echoes coming from the falling snow (range $x<$\SI{5}{\meter}) during the 6 most intense episodes, for all 4 sensors. The data is smoothed by taking statistics for small time windows. Except for the LMS200 and Hokuyo first echo, all other sensors statistics have been scaled up (factor in bracket of legend b) for ease of visual comparison. Time is in hour, starting from the beginning of the data capture sequence. \todo{Replace with PDF version?}}
     \label{fig:TimingSnow}
 \end{figure*}
@@ -81,8 +81,8 @@ The general shape of these histograms is close to a log-normal distribution, wit
 
 \begin{figure}[th]
     \centering
-    \includegraphics[width=0.97\linewidth]{./img/ShieldingModel.png}
-    \caption{Cartoon representation of the interaction between the probability of detecting a snowflake (in red) and the diminution of snowflakes due to the shielding effect of the building (in blue). The black line is the product of the two, and bear a close resemblance to the actual histograms extracted from our datasets. \todo{PDF}}
+    \includegraphics[width=0.97\linewidth]{./img/ShieldingModel.pdf}
+    \caption{Cartoon representation of the interaction between the probability of detecting a snowflake (in red) and the diminution of snowflakes due to the shielding effect of the building (in blue). The black line is the product of the two, and bear a close resemblance to the actual histograms extracted from our datasets.}
     \label{fig:CartoonModel}
 \end{figure}
 
@@ -99,8 +99,8 @@ For all sensors, we can also conclude that beyond the range $x>\SI{10}{\meter}$,
 
 \begin{figure}[th]
     \centering
-    \includegraphics[width=0.80\linewidth]{./img/Histograms.png}
-    \caption{Histograms of echoes in falling snow during important snowfall days, as a function of distance $x$ reported by the sensor. Each histogram has been normalized by its area, for ease of comparison. The numbers in brackets are the fraction of data points in the complete dataset that correspond to snowflake echoes. Note that for the 03-21 dataset, the LMS151 was not working properly: thus no data is included for that day. \todo{PDF}}
+    \includegraphics[width=0.97\linewidth]{./img/Histogram.pdf}
+    \caption{Histograms of echoes in falling snow during important snowfall days, as a function of distance $x$ reported by the sensor. Each histogram has been normalized by its area, for ease of comparison. The numbers in brackets are the fraction of data points in the complete dataset that correspond to snowflake echoes. Note that for the 03-21 dataset, the LMS151 was not working properly: thus no data is included for that day.}
     \label{fig:Histograms}
 \end{figure}
 
