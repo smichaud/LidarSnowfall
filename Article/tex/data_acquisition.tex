@@ -43,7 +43,7 @@ Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with th
     \label{fig:view}
 \end{figure}
 
-\subsection{Dataset description} % TODO change number of acquisitions and overall time if required (and check abstract also)
+\subsection{Dataset description}
 Data acquisition started February~12 and ended on March~21. A total of 13 samples were obtained for a total of more than 78 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate, sky type and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. The dataset will be publicly available upon paper acceptance.
 
 \begin{table*}[htbp]
@@ -52,21 +52,18 @@ Data acquisition started February~12 and ended on March~21. A total of 13 sample
     \todo{Should we exclude the days with no snow?}
     \begin{tabular}{|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Beginning} & \textbf{Duration} & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind speed range}      & \textbf{Daily precipitation}  & \textbf{Temperature}     \\
-        \textbf{time}      & \textbf{(HH:MM)}  & \textbf{size}       & \textbf{rate}    & \textbf{(\SI{}{\km\per\hour})} & snow/\textit{rain}            & \textbf{(\SI{}{\celsius})}      \\\hline
-        Feb 12, 9:47 am    &  09:21            & Small               & Variable         & [2--13]                         & \SI{1.4}{\cm}                 & -14.1 \\\hline
-        Feb 14, 10:12 pm   &  04:12            & Small               & Very low         & [5--13]                         & \SI{0.2}{\cm}                 & -21.4 \\\hline
-        Feb 16, 12:27 pm   &  07:17            & None                & None             & [14--29]                        & \SI{0}{\cm}                   & -15.5 \\\hline
-        Feb 17, 12:02 pm   &  24:36            & None                & None             & [1--9]                          & \SI{0}{\cm}                   & -20.2 \\\hline
-        Feb 19, 8:38 am    &  10:02            & Big/small           & High             & [3--28]                         & \SI{4.5}{\cm}                 & -10.9 \\\hline
-        Mar 2, 1:06 pm     &  01:27            & Big/small           & Variable         & [22--36]                        & \SI{1.6}{\cm}                 & -9.1  \\\hline
-        Mar 3, 10:33 pm    &  02:17            & Big                 & Medium           & [7--9]                          & \SI{5.4}{\cm}                 & -13.3 \\\hline
-        Mar 4, 11:45 am    &  04:12            & Big/medium          & Low/none         & [20--30]                        & \SI{2.0}{\cm}                 & -4.3  \\\hline
-        Mar 17, 10:08 am   &  06:08            & Big/medium          & Low/none         & [1--31]                         & \SI{2.0}{\cm}                 & -5.8  \\\hline
-        Mar 21, 6:44 pm    &  07:42            & Medium/big          & High             & [5--33]                         & \SI{8.6}{\cm}                 & -5.1  \\\hline
-        Mar 30, 1:06 pm    &  04:45            & Medium/big          & High             & [4--8]                          & \SI{8.5}{\cm}                 & -3.0  \\\hline
-        Apr 2, 1:56 pm     &  01:51            & Small/rain          & High             & [2--10]                         & \SI{1.2}{\cm}/\textit{5.4 mm} & -8.4  \\\hline
-        Apr 21, 10:52 am   &  01:39            & Rain                & Medium           & [16--18]                        & \textit{15 mm}                & 14.6  \\\hline
+        \textbf{Beginning} & \textbf{Duration} & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind speed range}      & \textbf{Daily}         & \textbf{Temperature}       \\
+        \textbf{time}      & \textbf{(HH:MM)}  & \textbf{size}       & \textbf{rate}    & \textbf{(\SI{}{\km\per\hour})} & \textbf{precipitation} & \textbf{(\SI{}{\celsius})} \\\hline
+        Feb 12, 9:47 am    &  09:21            & Small               & Variable         & [2--13]                         & \SI{1.4}{\cm}         & -14.1                      \\\hline
+        Feb 14, 10:12 pm   &  04:12            & Small               & Very low         & [5--13]                         & \SI{0.2}{\cm}         & -21.4                      \\\hline
+        Feb 19, 8:38 am    &  10:02            & Big/small           & High             & [3--28]                         & \SI{4.5}{\cm}         & -10.9                      \\\hline
+        Mar 2, 1:06 pm     &  01:27            & Big/small           & Variable         & [22--36]                        & \SI{1.6}{\cm}         & -9.1                       \\\hline
+        Mar 3, 10:33 pm    &  02:17            & Big                 & Medium           & [7--9]                          & \SI{5.4}{\cm}         & -13.3                      \\\hline
+        Mar 4, 11:45 am    &  04:12            & Big/medium          & Low/none         & [20--30]                        & \SI{2.0}{\cm}         & -4.3                       \\\hline
+        Mar 17, 10:08 am   &  06:08            & Big/medium          & Low/none         & [1--31]                         & \SI{2.0}{\cm}         & -5.8                       \\\hline
+        Mar 21, 6:44 pm    &  07:42            & Medium/big          & High             & [5--33]                         & \SI{8.6}{\cm}         & -5.1                       \\\hline
+        Mar 30, 1:06 pm    &  04:45            & Medium/big          & High             & [4--8]                          & \SI{8.5}{\cm}         & -3.0                       \\\hline
+        Apr 2, 1:56 pm     &  01:51            & Small/rain          & High             & [2--10]                         & \SI{1.2}{\cm}         & -8.4                       \\\hline
     \end{tabular}
     \caption{Overview of our snow dataset.}
     \label{tab:overview-dataset}
