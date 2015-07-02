@@ -5,7 +5,7 @@
 
 Data acquisition was performed with the following four LiDARs: the SICK LMS200, SICK LMS151, Hokuyo UTM-30LX-EW, and the Velodyne HDL-32E. Relevant sensor information is provided in table~\ref{tab:lidars}, but the reader is referred to the manufacturers' documentation for additional information\footnote{Available here: Velodyne~\cite{VelodyneManual}, Hokuyo~\cite{UTMDatasheet}, LMS151~\cite{LMS151Datasheet}, LMS200~\cite{LMS200Manual}}.
 
-The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}. This wavelength part of the solar spectrum, which means that outdoor lighting conditions could potentially cause interference.
+The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
 
 \begin{table*}[htbp]
     \centering
@@ -24,9 +24,7 @@ The first element that gives a qualitative overview of the sensor performance is
 
 \subsection{Setup configuration}
 
-Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them.
-
-Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors. In particular, the second row of fig.~\ref{fig:view} shows how the building casts a shadow that progressively covers the scene over the course of the day. This will allow us to explore the influence of lighting, as well as snow in sec.~\ref{sec:data-analysis}.
+Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors.
 
 \begin{figure}[th]
     \centering
@@ -37,14 +35,13 @@ Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with th
 
 \begin{figure}[th]
     \centering
-    \includegraphics[width=0.90\linewidth]{./img/camera_view.jpg}\\*[.5em]
-    \includegraphics[width=0.90\linewidth]{./img/shadow2.png}
-    \caption{View from the RGB camera. The sequence of pictures at the bottom shows the evolution of the shadow caused by the building between 10:00~am and 10:40~am.}
+    \includegraphics[width=0.90\linewidth]{./img/camera_view.jpg}
+    \caption{View from the RGB camera.}
     \label{fig:view}
 \end{figure}
 
 \subsection{Dataset description}
-Data acquisition started February~12 and ended on March~21. A total of 13 samples were obtained for a total of more than 78 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate, sky type and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. The dataset will be publicly available upon paper acceptance.
+Data acquisition started February~12 and ended on March~2. A total of 10 samples were obtained for a total of more than 50 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. The dataset will be publicly available upon paper acceptance.
 
 \begin{table*}[htbp]
     \centering
