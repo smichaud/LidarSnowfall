@@ -1,10 +1,12 @@
 \section{Discussion and Conclusion}
 
-A significant side benefit of the more sensitive sensors (LMS-200, Hokuyo UTM-30LX-EW) is that they are capable of recording the temporal evolution of a snowstorm, at a fine-grained level. This is something that is not possible with traditional snow measuring equipment, which can only report accumulation over long period of times. Indeed, for b) we see a pretty steady snowfall from $t=1$ to $t=4$ hours, with a peak around $t=1.25$ hours. This could be helpful in developing temporal models of snowstorms, to be used in a vehicle simulator for example or simply in meteorological studies.
+In this paper, we explored the impact of falling snow on the usability of 4 commonly deployed LiDAR in the context of autonomous driving vehicles.To this end, we collected LiDAR data during 6 snowstorms in the winter of 2015. Upon analysis, we found that the SICK LMS200 was the most sensitive LiDAR, having a peak average rate of up to 15~\% of echoes coming from falling snow. Meanwhile, all 3 others never exceeded 1~\%. We also presented a simple probabilistic model to take into account the effect of the range on snowflakes interference. Based on a histogram analysis, we concluded that for our experimental setup, this model can be approximated by a log-normal distribution. Most importantly, our data indicate that the impact of snowflakes on LiDAR beyond a range of \SI{10}{\meter} is very limited. 
 
-Open question such as how the maximum range is affected by the snow.
+A significant side benefit of the more sensitive sensors (SICK LMS-200 or the $1^{st}$ echo of the Hokuyo UTM-30LX-EW) is that they are capable of recording the temporal evolution of a snowstorm, at a fine-grained level. This could be helpful in developing temporal models of snowstorms, to be used in a vehicle simulator.
+%This is something  not possible with traditional snow measuring equipments, which can only report accumulation over long period of times.
 
-Say we will do more analysis.
-We have more dataset, including sunny days (to see the impact of the snow reflection ambient light) and one rainy episode. Also look at how noise was affected.
+A number of questions remains to explore. For example, as the LiDAR beam travels through the falling snow, its intensity will diminish. Since the maximum range of a LiDAR is heavily related to this beam intensity, we expect the maximum range to be affected during snowstorms. In our setup, we have not witnessed this issue, indicating that this effect probably happens beyond our maximum distance of \SI{20}{\meter}. Finally, we would like to understand the impact of rain on these LiDAR. 
 
-How the snow seems only to affect at close range. due to the physics of the problem : reduced beam intensity, reduced echo.
+%We also have one dataset taken during a rain shower.
+% Also look at how noise was affected.
+%Another key aspect would be to estimate the impact of sunlight on the measurements, (this has been done by F. Pomerleau in some sense. We have other datasets that were collected in overcast and sunny days, but without any falling snow.
