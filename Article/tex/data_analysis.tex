@@ -15,7 +15,7 @@ For each sensor, we selected a combination of angles and laser rings (for the Ve
     \begin{tabular}{|c|c|c|c|c|}
         \hline
         \textbf{Sensor}            & \textbf{Acquisition}  & \textbf{Selected}  & \textbf{Selected}  & \textbf{Window} \\
-        \textbf{ }                     & \textbf{Frequency}  & \textbf{beams/angles}  & \textbf{rings}  & \textbf{size} \\\hline
+        \textbf{ }                     & \textbf{frequency}  & \textbf{beams/angles}  & \textbf{rings}  & \textbf{size} \\\hline
        LMS-200               & \SI{9.375}{\Hz}                      & 55--115                                    & N/A                         & ~\SI{106}{\second}       \\\hline
         LMS-151               & \SI{25}{\Hz}                           & 310--220                                  & N/A                         & ~\SI{40}{\second}        \\\hline
         Hokuyo               & \SI{20}{\Hz}                          & 440--590                                  & N/A                         & ~\SI{100}{\second}     \\\hline
@@ -43,7 +43,7 @@ To smooth out these very short-term fluctuations, statistics are extracted from 
 \end{figure}
 
 \subsubsection{SICK Sensors LMS-200 and LMS-151}
-Our first conclusion based on fig.~\ref{fig:TimingSnow} is that some sensors are more sensitive than others. The most sensitive device was the older LMS200, first introduced in the mid-2000s. For the most intense snowstorms (fig.~\ref{fig:TimingSnow}. b) 02-19, d) 03-17, e) 03-21 and f) 03-30), it peaked at around 15\%, for averaging windows of \SI{106}{\second}. As an older-generation device, it probably used unsophisticated algorithms and sensing. Indeed, its technical description~\cite{LMS200Manual} indicates that ``Raindrops and snow-flakes are cut out using pixel-oriented evaluation'', but this seems only applicable to  obstacle detection (field computation), not the actual measurements. However, no further details are given. On the other hand, the much more recent SICK LMS-151 exhibits much less sensitivity to snowflakes: the reduction factor for the fraction of snowflakes echoes is in the order of 200-300, granting this device a much higher immunity against snowflakes. Indeed, the highest peak was around 0.1 \% during the 02-19 dataset. Advances in optics and algorithms are probably responsible for this significant improvement~\todo{sounds too generic and hypothetical. Remove?}. Moreover, this device can be programmed to return either the first or second echo. In our tests, we selected the latter: it would have been however interesting to perform tests to get information about the first echo, but our current system was not capable of gathering this information. Finally, this sensor can also do optics cover contaminant measurements, albeit this feature was not relevant in our case since the sensor's cover was not exposed to the elements~\todo{also remove? not super relevant}.
+Our first conclusion based on fig.~\ref{fig:TimingSnow} is that some sensors are more sensitive than others. The most sensitive device was the older LMS200, first introduced in the mid-2000s. For the most intense snowstorms (fig.~\ref{fig:TimingSnow}. b) 02-19, d) 03-17, e) 03-21 and f) 03-30), it peaked at around 15\%, for averaging windows of \SI{106}{\second}. As an older-generation device, it probably used unsophisticated algorithms and sensing. Indeed, its technical description~\cite{LMS200Manual} indicates that ``Raindrops and snow-flakes are cut out using pixel-oriented evaluation'', but this seems only applicable to  obstacle detection (field computation), not the actual measurements. However, no further details are given. On the other hand, the much more recent SICK LMS-151 exhibits much less sensitivity to snowflakes: the reduction factor for the fraction of snowflakes echoes is in the order of 200-300, granting this device a much higher immunity against snowflakes. Indeed, the highest peak was around 0.1 \% during the 02-19 dataset. Advances in optics and algorithms are probably responsible for this significant improvement~\todo{sounds too generic and hypothetical. Remove?}. Moreover, this device can be programmed to return either the first or second echo\todo{Make sure this information is ok.}. In our tests, we selected the latter: it would have been however interesting to perform tests to get information about the first echo, but our current system was not capable of gathering this information. Finally, this sensor can also do optics cover contaminant measurements, albeit this feature was not relevant in our case since the sensor's cover was not exposed to the elements~\todo{also remove? not super relevant}.
 
 \begin{figure*}[th]
     \centering
@@ -100,6 +100,7 @@ For all sensors, we can also conclude that beyond the range $x>\SI{10}{\meter}$,
 
 \begin{table}[htbp]
     \centering
+    \todo{Might want to give info about the why values are different from fig 4.}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
         \textbf{LMS-200}       & \textbf{Hokuyo}             & \textbf{Hokuyo}    & \textbf{LMS-151}  & \textbf{Velodyne}  \\
