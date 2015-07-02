@@ -6,29 +6,10 @@
 
 %\todo{If not, then we need an intro laying down the plan: first discuss dataset selection, then temporal analysis, followed by range analysis to help the reader figure out what's going on. }
 
-\subsection{Pre-selection of laser data}
-For each sensor, we selected a combination of angles and laser rings (for the Velodyne) or beams (for the others) that had a clear view of the snow-covered ground surface. The actual details for each sensor are given in tab.~\ref{tab:selectionScans}. The range of the ground in our scans was between $x = \SI{15}{\meter}$ to $x=\SI{22}{\meter}$, depending on the beam. To simplify the analysis, we considered as a snowflake echo any measurement which had a range reading of $x<\SI{14.5}{\meter}$. As will be shown later in sec.~\ref{sec:Histo}, this is a valid approximation as the vast majority of those events happened for $x<\SI{10}{\meter}$. Thus, any snowflakes echoes between $x>\SI{14.5}{\meter}$ and the snow-covered ground surface were negligible, for all four sensors.
-
-\begin{table}[htbp]
-    \centering
-    % \def\tabularxcolumn#1{m{#1}}
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        \textbf{Sensor}            & \textbf{Acquisition}  & \textbf{Selected}  & \textbf{Selected}  & \textbf{Window} \\
-        \textbf{ }                     & \textbf{frequency}  & \textbf{beams/angles}  & \textbf{rings}  & \textbf{size} \\\hline
-       LMS200               & \SI{9.375}{\Hz}                      & 55--115                                    & N/A                         & ~\SI{106}{\second}       \\\hline
-        LMS151               & \SI{25}{\Hz}                           & 310--220                                  & N/A                         & ~\SI{40}{\second}        \\\hline
-        Hokuyo               & \SI{20}{\Hz}                          & 440--590                                  & N/A                         & ~\SI{100}{\second}     \\\hline
-        Velodyne             & \SI{10}{\Hz}                          & -0.05--0.25 rad                     & 17--31                   & ~\SI{40}{\second}      \\\hline
-    \end{tabular}
-    \caption{Details for data used in analysis. The window size is the temporal window used to calculate statistics during the temporal evolution of a storm.}
-    \label{tab:selectionScans}
-\end{table}
-
 % ========================= Timing  ===================
 
 \section{Temporal analysis}
-\ref{sec:temporal}
+\label{sec:temporal}
 
 In this section, we analyze the temporal behavior of the sensor for the duration of complete snowstorms. In particular, we are interested in seeing how the fraction of echoes in snowflakes evolve over time, for all four sensors. First, we will discuss the highly dynamical nature of snowstorm. We will show how consecutive scans can have significant spatial and temporal differences in the distributions of the snowflakes echoes, justifying the use of averaging windows for the analysis. Finally, we will present the temporal evolution of these statistics for all four sensors, and briefly discuss the results individually.
 
