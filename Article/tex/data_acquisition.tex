@@ -1,13 +1,12 @@
 %!TEX root = ../root.tex
 \section{Data acquisition}
-\todo{Check it this intro sentense is ok}
-In the following section, we report relevant characteristics of the four sensors used, we then describe the general setup configuration and we finally outline the dataset. 
+In this section, we report on the relevant characteristics of the four sensors used in our dataset. We then describe the physical configuration of our test setup, then outline the weather condition pertaining to each of the six collected snowfalls. Finally, we describe how the information from the LiDARs was preprocessed before analysis. 
 
 \subsection{Sensors}
 
 Data acquisition was performed with the following four LiDARs: the SICK LMS200, SICK LMS151, Hokuyo UTM-30LX-EW, and the Velodyne HDL-32E. Relevant sensor information is provided in table~\ref{tab:lidars}, but the reader is referred to the manufacturers' documentation for additional information\footnote{Available here: Velodyne~\cite{VelodyneManual}, Hokuyo~\cite{UTMDatasheet}, LMS151~\cite{LMS151Datasheet}, LMS200~\cite{LMS200Manual}}.
 
-The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
+The first element that gives a qualitative overview of the sensor performance is the maximum acquisition distance. This value depends on several factors, such as lighting conditions and target remission. This value is provided directly for the HDL-32E and UTM-30LX-EW, but based on a target remission greater than \SI{75}{\percent} for the LMS200 and LMS151. Another element to consider is the shape and area covered by the beam, which influences the probability of hitting a snowflake as well as the proportion of area it covers. A final significant element which changes from one sensor to the other is the number of echoes returned. The Hokuyo sensor can return up to three echoes, which means that it could locate two snowflakes before the beam reaches the ground. Regarding the LMS151, two echoes are evaluated by the hardware, but only one is returned. Finally, note that all LiDARs use class 1 laser with a wavelength of \SI{905}{\nano\meter}.
 
 \begin{table*}[htbp]
     \centering
@@ -26,7 +25,7 @@ The first element that gives a qualitative overview of the sensor performance is
 
 \subsection{Setup configuration}
 
-Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground and the main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors.
+Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground. The main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors.
 
 \begin{figure}[th]
     \centering
@@ -43,7 +42,7 @@ Data acquisition was conducted at Pouliot Hall of Laval University, where sensor
 \end{figure}
 
 \subsection{Dataset description}
-Data acquisition started February~12 and ended on March~2. A total of 10 samples were obtained for a total of more than 50 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate and wind speed. The target ground area also changed from different amount and type of snow to complete grass. Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. The dataset will be publicly available upon paper acceptance.
+Data acquisition started February~12 and ended on March~2. A total of 10 episodes were collected for a total of more than 50 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate and wind speed.  Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. Of these, six are used in the current study, as highlighted in this table. The dataset will be publicly available upon paper acceptance. %The target ground area also changed from different amount and type of snow to complete grass.
 
 \begin{table*}[htbp]
     \centering
@@ -51,23 +50,23 @@ Data acquisition started February~12 and ended on March~2. A total of 10 samples
         \hline
         \textbf{Beginning} & \textbf{Duration} & \textbf{Snowflakes} & \textbf{Falling} & \textbf{Wind speed range} & \textbf{Daily precipitation}  & \textbf{Temperature} \\
         \textbf{time}      & (HH:MM)           & \textbf{size}       & \textbf{rate}    & (\SI{}{\km\per\hour})     & (\SI{}{\cm})                  & (\SI{}{\celsius})    \\\hline
-        Feb 12, 9:47 am    &  09:21            & Small               & Variable         & [2--13]                   & 1.4                           & -14.1                \\\hline
+       \textbf{Feb 12, 9:47 am}    &  09:21            & Small               & Variable         & [2--13]                   & 1.4                           & -14.1                \\\hline
         Feb 14, 10:12 pm   &  04:12            & Small               & Very low         & [5--13]                   & 0.2                           & -21.4                \\\hline
-        Feb 19, 8:38 am    &  10:02            & Big/small           & High             & [3--28]                   & 4.5                           & -10.9                \\\hline
+        \textbf{Feb 19, 8:38 am}    &  10:02            & Big/small           & High             & [3--28]                   & 4.5                           & -10.9                \\\hline
         Mar 2, 1:06 pm     &  01:27            & Big/small           & Variable         & [22--36]                  & 1.6                           & -9.1                 \\\hline
         Mar 3, 10:33 pm    &  02:17            & Big                 & Medium           & [7--9]                    & 5.4                           & -13.3                \\\hline
-        Mar 4, 11:45 am    &  04:12            & Big/medium          & Low/none         & [20--30]                  & 2.0                           & -4.3                 \\\hline
-        Mar 17, 10:08 am   &  06:08            & Big/medium          & Low/none         & [1--31]                   & 2.0                           & -5.8                 \\\hline
-        Mar 21, 6:44 pm    &  07:42            & Medium/big          & High             & [5--33]                   & 8.6                           & -5.1                 \\\hline
-        Mar 30, 1:06 pm    &  04:45            & Medium/big          & High             & [4--8]                    & 8.5                           & -3.0                 \\\hline
+        \textbf{Mar 4, 11:45 am}    &  04:12            & Big/medium          & Low/none         & [20--30]                  & 2.0                           & -4.3                 \\\hline
+        \textbf{Mar 17, 10:08 am}   &  06:08            & Big/medium          & Low/none         & [1--31]                   & 2.0                           & -5.8                 \\\hline
+        \textbf{Mar 21, 6:44 pm}   &  07:42            & Medium/big          & High             & [5--33]                   & 8.6                           & -5.1                 \\\hline
+        \textbf{Mar 30, 1:06 pm}    &  04:45            & Medium/big          & High             & [4--8]                    & 8.5                           & -3.0                 \\\hline
         Apr 2, 1:56 pm     &  01:51            & Small/rain          & High             & [2--10]                   & 1.2                           & -8.4                 \\\hline
     \end{tabular}
-    \caption{Overview of our snow dataset.}
+    \caption{Overview of our snow dataset. Dates in bold correspond to the six days used in the present study.}
     \label{tab:overview-dataset}
 \end{table*}
 
 \subsection{Pre-selection of laser data}
-For each sensor, we selected a combination of angles and laser rings (for the Velodyne) or beams (for the others) that had a clear view of the snow-covered ground surface. The actual details for each sensor are given in tab.~\ref{tab:selectionScans}. The range of the ground in our scans was between $x = \SI{15}{\meter}$ to $x=\SI{22}{\meter}$, depending on the beam. To simplify the analysis, we considered as a snowflake echo any measurement which had a range reading of $x<\SI{14.5}{\meter}$. As will be shown later in sec.~\ref{sec:Histo}, this approximation is valid as the vast majority of those events happened for $x<\SI{10}{\meter}$. Thus, any snowflakes echoes between $x>\SI{14.5}{\meter}$ and the snow-covered ground surface were negligible, for all four sensors.
+For each sensor, we selected a combination of angles and laser rings (for the Velodyne) or angles (for the others) that had a clear view of the snow-covered ground surface. The actual details for each sensor are given in tab.~\ref{tab:selectionScans}. The range of the ground in our scans was between $x = \SI{15}{\meter}$ to $x=\SI{22}{\meter}$, depending on the angle. To simplify the analysis, we considered as a snowflake echo any measurement which had a range reading of $x<\SI{14.5}{\meter}$. As will be shown later in sec.~\ref{sec:Histo}, this approximation is valid as the vast majority of those events happened for $x<\SI{10}{\meter}$. %Thus, any snowflakes echoes between $x>\SI{14.5}{\meter}$ and the snow-covered ground surface were negligible, for all four sensors.
 
 \begin{table}[htbp]
     \centering
@@ -81,7 +80,7 @@ For each sensor, we selected a combination of angles and laser rings (for the Ve
         Hokuyo               & \SI{20}{\Hz}                          & 440--590                                  & N/A                         & ~\SI{100}{\second}     \\\hline
         Velodyne             & \SI{10}{\Hz}                          & -0.05--0.25 rad                     & 17--31                   & ~\SI{40}{\second}      \\\hline
     \end{tabular}
-    \caption{Details for data used in analysis. The window size is the temporal window used to calculate statistics during the temporal evolution of a storm.}
+    \caption{Details of measurement selection for the analysis. The window size is the temporal window used to calculate statistics during the temporal evolution of a snowfall.}
     \label{tab:selectionScans}
 \end{table}
 
