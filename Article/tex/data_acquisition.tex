@@ -25,7 +25,7 @@ The first element that gives a qualitative overview of the sensor performance is
 
 \subsection{Setup configuration}
 
-Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{13.9}{\meter} above the ground. The main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors.
+Data acquisition was conducted at Pouliot Hall of Laval University, where sensors were placed close to the inner wall of a window facing N\SI{50}{\degree}E. As shown in fig.~\ref{fig:setup}, a wooden structure held the sensors side by side at approximately \SI{14}{\meter} above the ground. The main scanning plane (i.e. XY plane in the sensor reference frame) formed a \SI{30}{\degree} angle with respect to the building wall, so as to increase the maximum distance as much as possible without having the laser beams hitting  trees or a pedestrian walkway present near the building. In addition, an RGB camera was placed alongside the LiDARs to provide visual information about the scene. In this configuration, a slight opening of the window allowed to keep the instruments inside while scanning outside. To avoid direct interference between sensors, corrugated plastic layers were placed between them. Fig.~\ref{fig:view} shows the scene as observed by the RGB camera placed with the sensors.
 
 \begin{figure}[th]
     \centering
@@ -39,7 +39,7 @@ Data acquisition was conducted at Pouliot Hall of Laval University, where sensor
     \includegraphics[width=0.90\linewidth]{./img/camera_view.jpg}
     \caption{View from the RGB camera.}
     \label{fig:view}
-\end{figure}
+\end{figure} 
 
 \subsection{Dataset description}
 Data acquisition started February~12 and ended on March~2. A total of 10 episodes were collected for a total of more than 50 hours of data. Recordings were made using the Robot Operating System (ROS)~\cite{ROSWeb}, which provides standardized data types as well as time synchronization. Data was acquired at different times of day and in a wide variety of conditions, covering a wide range of snowflakes size, falling rate and wind speed.  Table~\ref{tab:overview-dataset} provides an overview of our data\footnote{Wind speed, daily precipitation and temperature are reported from Québec City Jean Lesage International Airport at approximately \SI{9}{\km} from Laval University. Data is available here \cite{WeatherCanada}.}. Of these, six are used in the current study, as highlighted in this table. The dataset will be publicly available upon paper acceptance. %The target ground area also changed from different amount and type of snow to complete grass.
