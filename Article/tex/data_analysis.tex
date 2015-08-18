@@ -21,9 +21,9 @@ Computing and reporting the temporal statistics for every scan would put too muc
 
 To smooth out these fluctuations, statistics are extracted from a number of consecutive scans contained in a time window of around 1~minute (detailed values in tab.~\ref{tab:selectionScans}). Fig.~\ref{fig:TimingSnow} shows this smoothed fraction of snowflake echoes compared to all returned laser measurements as a function of time, for the six snowiest days of our dataset. To allow for better visualization, only the LMS200 and the Hokuyo's first echo are plotted at their actual scale (1x): Others have been scaled up (from 30x to 200x), with their corresponding scaling factors reported in the legend. As will be shown below, some sensors were much more sensitive than others.
 
- \begin{figure}[th]
-    \centering
-    \includegraphics[trim={0.2cm 0 0 0},clip,width=0.9\linewidth]{./img/LMS200_4Scans_Feb19.pdf}
+\begin{figure}[th]
+\centering
+\includegraphics[trim={0.2cm 0 0 0},clip,width=0.9\linewidth]{./img/LMS200_4Scans_Feb19.pdf}
     \includegraphics[trim={0.2cm 0 0 0},clip,width=0.9\linewidth]{./img/Hokuyo_4Scans_Feb19.pdf}
     \caption{Four overlaid consecutive scans for the LMS200 sensor (top), and the first echo scans for the Hokuyo sensor (bottom), taken from the 02-19 dataset. Each symbol corresponds to a particular scan. The curved line at the top corresponds to the snow surface on the ground. One can see the rapid variation of the snowflake echoes between scans, and how they are mostly limited to a range $x<\SI{5}{\meter}$. The percentages (in brackets) are the proportion of those echoes in the snowflakes.}
     \label{fig:LMS200_4Scans_Feb19}
@@ -38,7 +38,7 @@ Our first conclusion based on fig.~\ref{fig:TimingSnow} is that the most sensiti
 
 \begin{figure*}[th]
     \centering
-    \includegraphics[trim={3.2cm 0 0 0},clip,width=0.97\linewidth]{./img/Timings.pdf}
+    \includegraphics[trim={3.2cm 0 0 0},clip,width=0.97\linewidth]{./img/Timings.png}
     \caption{Temporal evolution of the percentage of echoes coming from the falling snow (range $x<$\SI{5}{\meter}) during the 6 most intense episodes, for all 4 sensors. The data is smoothed by taking statistics for small time windows. Except for the LMS200 and Hokuyo first echo, all other sensors statistics have been scaled up (factor in bracket of legend b) for ease of visual comparison. Time is in hour, starting from the beginning of the data capture sequence.}
     \label{fig:TimingSnow}
 \end{figure*}
